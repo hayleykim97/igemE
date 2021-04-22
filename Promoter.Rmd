@@ -39,4 +39,3 @@ igem_part <-data.frame(no,
 knitr::kable(igem_part)
 ```
 
-
