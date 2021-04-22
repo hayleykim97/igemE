@@ -1,0 +1,49 @@
+---
+title: "0419"
+author: "김승화"
+date: '2021 4 19 '
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+dir.create("download")
+dir.create("download/promoters")
+
+destdir <- "download/promoters/"
+
+url <- "https://github.com/TH-Kim310/igemE/raw/main/%EC%97%91%EC%85%80.xlsx"
+download.file(url, "th-kim310.xlsx")
+
+url <-  "https://github.com/jinjulee119/igemE2/raw/main/igem_promoters.xlsx"
+download.file(url, paste0(destdir, "jinjulee119.xlsx"))
+
+
+url <-  "https://github.com/gpemelianov/igemE/raw/main/igem_promoter.xlsx"
+download.file(url, paste0(destdir, "gpemelianov.xlsx"))
+
+url <-  "https://github.com/Yoo-BH/igemE/raw/main/igem_promoter.xlsx"
+download.file(url, paste0(destdir, "yoo-bh.xlsx"))
+
+url <-  "https://github.com/treebird19/igemE/raw/main/igem_promoters.xlsx"
+download.file(url, paste0(destdir, "treebird19.xlsx"))
+
+
+excel_files <- dir("download/promoters")
+excel_file_names <- paste("download/promoters/", excel_files, sep="")
+
+```
+
+```{r}
+
+exfilenames <- dir(destdir, pattern="*.xlsx")
+
+tmp1 <- read_excel(paste0(destdir, exfilenames[1]), sheet=1, skip=0, col_names=T)
+tmp2 <- read_excel(paste0(destdir, exfilenames[2]), sheet=1, skip=0, col_names=T)
+tmp3 <- read_excel(paste0(destdir, exfilenames[3]), sheet=1, skip=0, col_names=T)
+tmp4 <- read_excel(paste0(destdir, exfilenames[4]), sheet=1, skip=0, col_names=T)
+tmp5 <- read_excel(paste0(destdir, exfilenames[5]), sheet=1, skip=0, col_names=T)
+igem_team <- bind_rows(tmp1, tmp2, tmp3, tmp4, tmp5)
+```
