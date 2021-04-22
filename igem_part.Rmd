@@ -1,0 +1,46 @@
+---
+title: "igem_part.Rmd"
+author: "김승화"
+date: '2021 3 29 '
+output: html_document
+---
+```{r}
+no <- c(1,2,3,4,5)
+
+team_name <- c("GO_Paris-Saclay", "BOKU-Vienna", "BGU-Israel", "Hannover", "KAIT-Japan")
+project_title <- c("HuGenesS", "Phangel-Taking Phage Therapy Ahead", "WIPEOUT-Wipes out wet wipes of the environment", "InToSens Development of an Inflammatory Toxin Sensor for detecting implant associated inflammations","E.coli that Create a Creative Environment")
+
+project_year <- c(2020,2020,2020,2020,2020)
+
+wiki_page <- c("https://2020.igem.org/Team:GO_Paris-Saclay", "https://2020.igem.org/Team:BOKU-Vienna", "https://2020.igem.org/Team:BGU-Israelndo5a", "https://2020.igem.org/Team:Hannover", "https://2020.igem.org/Team:KAIT_Japan")
+
+igem_team <- data.frame(no, 
+                        team_name,
+                        project_title,
+                        project_year,
+                        wiki_page)
+#knitr::kable(std, format = "markdown")
+                           
+knitr::kable(igem_team)
+```
+
+
+```{r}
+no<- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30)
+
+part_id <- c("BBa_K2406020","BBa_B1001","	BBa_K3514001","BBa_K3514002","BBa_K3514003","BBa_B0040","BBa_K3514004","BBa_K3338000","BBa_K3338001","BBa_K3338002","BBa_K3338003","BBa_K3338004","BBa_K3338005","BBa_K3338006","BBa_K3338007","BBa_K3338008","BBa_K3338010","BBa_K3338011","BBa_K3338012","BBa_K3338013","BBa_K3338015","BBa_K3338014","BBa_K3338016","BBa_K3338017","BBa_K3338018","BBa_K3338019","BBa_K3338021","BBa_K3338022","BBa_K3338023","BBa_K3338020")
+
+part_name <- c("T7-LacO Promoter","Terminator(artifical, small, %T~=90)","Protein Exo of the Lambda Red System, degrades dsDNA into ssDNA, leaves 3' ends","Protein Beta of the Lambda Red System","Protein Gam of the Lambda Red System","Spacer.1 (generic)","Lambda Red System","Iron transporter MagA from Magnetospirillum magneticum","Human codon optimized Gaussia luciferase hGLuc","Synthetic promoter_2 with NF-κB and AP1 binding sites","P2A self-cleaving peptide without GSG-linker","Internal ribosome entry site (IRES) for use in eukaryotic cells","Interleukin-6 Promoter mutagenized (IL-6 Pmut)","EGFP","Synthetic promoter_1 with NF-κB and AP1 binding sites","Interleukin-6 Promoter (IL-6 P)","IL-6 P-MagA-P2A-hGLuc (Inflammatory Toxin Sensor)","CMV-EGFP-MagA-P2A-hGLuc","CMV-EGFP-MagA","CMV-EGFP-P2A-mCherry","CMV-EGFP-MagA-IRES-hGLuc","CMV-EGFP-IRES-mCherry","CMV-hGLuc-FLAG","CMV-hGLuc","CMV-MagA-FLAG","IL-6 Pmut-hGLuc","SynthP_1-hGLuc","SynthP_2-hGLuc","IL-6 Pmut-MagA-P2A-hGLuc","pEGFP-C2")
+
+part_type <- c("promoter","terminator", "protein","protein","protein","Spacer","Lambda system","Reporter","Reporter","Regulatory","Coding","RBS","Regulatory","Reporter","Regulatory","Regulatory","Composite","Composite","Composite","Composite","Composite","Composite","Composite","Composite","Composite","Composite","Composite","Composite","Plasmid","Plasmid")
+
+team_id <- c(2,2,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4)
+
+igem_part <- data.frame(no,
+                        part_id,
+                        part_name,
+                        part_type,
+                        team_id)
+knitr::kable(igem_part)
+    
+```
